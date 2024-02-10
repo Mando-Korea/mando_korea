@@ -1,0 +1,67 @@
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/login.css' %}" />
+    <br></br><br></br><br></br><br></br><br></br><br></br>
+        <h1 style="text-align: center;">www.MandoKorea.com</h1>
+</head>
+<body>
+    <div class="bg-image">
+        <div class="signup-container">
+            <div>
+                {% for message in messages %}
+                <h5>{{message}}</h5>
+                {% endfor %}
+            </div>
+                <center>
+                    <form data-uia="email-form" class=" default-ltr-cache-1u8qly9" action="" method="POST">
+                           {% csrf_token %}
+                            <div data-issplitform="true" data-hasmessage="false" class="default-ltr-cache-1jbflut e1w590cc0">
+                                <div data-uia="field-email+container" class=" e2so2tu1 default-ltr-cache-8i5ldx ea3diy35">
+                                    <label for="a7af0ad670d3d" data-uia="field-email+label" class="default-ltr-cache-v70qew ea3diy32"></label>
+                                    <div class="default-ltr-cache-fmygl2 ea3diy34">
+                                        <input autocomplete="email" minlength="5" maxlength="50" type="email" id="a7af0ad670d3d" name="email" data-uia="field-email" value="" data-autofill="true" placeholder="EMAIL">
+                                        <div aria-hidden="true" class="default-ltr-cache-emv211 ea3diy33">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div aria-hidden="true" class="default-ltr-cache-17uj5h e1ax5wel0">
+                                    
+                                    </div>
+                                </div>
+                                    <button style="font-size: 20px; padding: 10px 20px; background-color: blue; color: white; border: none; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); cursor: pointer;">
+                                        NEXT
+                                    </button>
+                     </form>
+                 </center>
+
+           </div>
+      </div>
+
+<script>
+    // JavaScript to run on page load
+document.addEventListener('DOMContentLoaded', function() {
+    var userEmail = getCookie('userEmail');
+    if (userEmail) {
+        document.getElementById('emailInput').value = userEmail;
+    }
+});
+
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+}
+</script>
+
+  </body>
+</html>
